@@ -1,0 +1,171 @@
+﻿/*
+    CONTENTS:               /////////////////////////////////////////////////////////
+    ---------------------
+    navbar drop shadow
+    body 
+        top padding         - to account for the fixed navbar overlaying your content
+    spacers                 - allows for adding white space
+    media querries          
+                            - hides objects I don't want seen on mobile devices
+                            - logo swap
+    logo swap               - swap to small logo on mobile
+    lines
+        greyLine            - replaces <hr> color: #f0f0f0;
+        darkerGreyLine      - color: #A8A8A8;
+        headerLine          - at the top of the header - color: light blue
+    login footer
+        p.loginFooterText
+        a.loginFooterLink
+    moz-selection           - change text selection color
+    input box 
+        remove border highlight 
+*/
+
+
+
+/*.rounded-border {
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 10px; 
+    background-color:transparent;
+    border-color:lightgrey;
+}*/
+
+
+
+.no-padding-top {
+    padding-top: 0px!important;
+}
+
+
+
+/* ///////////////////////// navbar drop shadow */
+    #navBar_dropShaddow {
+        -webkit-box-shadow: 0px 12px 23px -12px rgba(0,0,0,0.54);
+        -moz-box-shadow: 0px 12px 23px -12px rgba(0,0,0,0.54);
+        box-shadow: 0px 12px 23px -12px rgba(0,0,0,0.54);
+    }
+
+
+
+/* ///////////////////////// body */
+    body {
+        /* body top padding - to fix navbar overlay */
+        padding-top: 105px;
+    }
+
+
+
+/* ///////////////////////// spacers */
+    .spacer-1px  { padding-top: 1px;  }
+    .spacer-2px  { padding-top: 2px;  }
+    .spacer-3px  { padding-top: 3px;  }
+    .spacer-4px  { padding-top: 4px;  }
+    .spacer-5px  { padding-top: 5px;  }
+    .spacer-10px { padding-top: 10px; }
+    .spacer-15px { padding-top: 15px; }
+    .spacer-20px { padding-top: 20px; }
+    .spacer-25px { padding-top: 25px; }
+    .spacer-30px { padding-top: 30px; }
+    .spacer-35px { padding-top: 35px; }
+    .spacer-40px { padding-top: 40px; }
+    .spacer-45px { padding-top: 45px; }
+    .spacer-50px { padding-top: 50px; }
+    .spacer-55px { padding-top: 55px; }
+    .spacer-60px { padding-top: 60px; }
+    .spacer-65px { padding-top: 65px; }
+    .spacer-70px { padding-top: 70px; }
+    .spacer-75px { padding-top: 75px; }
+    .spacer-80px { padding-top: 80px; }
+
+
+
+/* ///////////////////////// media querries  
+    hides objects I don't want seen on mobile devices */
+    @media (max-width: 991px) {
+	    .hideOnMobile {
+		    visibility: hidden;
+            clear: both;
+            display: none;
+	    }
+        body { padding-top: 102px; } /* the header gets smaller on mobile - this reduces the body padding
+                                        to accomodate for the extra space */
+        #spacer60HideOnMobile.spacer-60px {    /* getting rid of space between '4 Main Links' and 'Mission' on mobile */
+            display: none; 
+            clear: both;
+            display: none;
+            visibility: hidden;
+        } 
+       #proudlyServing.col-md-12 {  /* hiding 'Proudly Serving' text on mobile */
+            display: none; 
+            clear: both;
+            display: none;
+            visibility: hidden;
+       }
+    }
+
+
+
+/* ///////////////////////// logo swap  
+                             desktop mode - hides small logo
+                             mobile mode - hides big logo + shows small logo */
+    #smallLogo { display: none; }
+    @media only screen and (max-width: 500px) {
+        #bigLogo { display: none; }
+        #smallLogo { display: block; margin-left: 12px; }
+    }
+
+
+
+/* ///////////////////////// greyLine - replaces <hr> 
+                                        use it: <div class="greyLine"></div> */
+    .greyLine {
+        border-bottom: solid 1px #f0f0f0;
+        margin: 10px, 0px, 0px, 0px; /* top, right, bottom, left */
+    }
+    .darkerGreyLine {
+        border-top: solid 1px #A8A8A8;
+        margin: 10px, 0px, 0px, 0px; /* top, right, bottom, left */
+    }
+    .headerLine {
+        border-top: solid 3px #ECECEC;
+    }
+
+
+
+/* ///////////////////////// login footer styles  */
+    p.loginFooterText {
+        color: #A8A8A8; 
+	    font-size: 12px;
+        padding-top: 8px;
+    }
+
+    a.loginFooterLink {
+        color: #A8A8A8; 
+	    font-size: 12px;
+        padding-top: 8px;
+    }
+
+
+
+/* ///////////////////////// change text selection color */
+    ::-moz-selection {  /* for Firefox */
+        background: #FF0099;
+        color: #EEE;
+        text-shadow: none;
+    }
+    ::selection {   /* for Chrome */
+        background: #FF0099;
+        color: black;
+        text-shadow: none;
+    }
+
+
+
+/* ///////////////////////// remove border highlight - on input text element */
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }

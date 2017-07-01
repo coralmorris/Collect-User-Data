@@ -1,0 +1,37 @@
+﻿/*
+    CONTENTS:               /////////////////////////////////////////////////////////
+    ---------------------
+    logo                    - with 'atoms'
+
+*/
+
+
+
+
+
+
+    .categoryLabel {
+        position: absolute;
+        padding-top: 7px; 
+    }
+    .inputFNOL {
+        margin-left: 150px;
+        padding-right: 6px;
+    }
+    .labelFNOL {
+        margin-right: 150px;
+        padding-right: 6px;
+    }
+    #ddlMonth {
+        margin-left: 85px;
+        padding-right: 6px;
+    }
+
+
+
+/* ///////////////////////// Logo with 'atoms' */
+div#backgroundLogo {
+    background-image: url('../Images/logo_FNOL.png');
+    background-repeat: no-repeat;
+    padding-top: 56px;
+}

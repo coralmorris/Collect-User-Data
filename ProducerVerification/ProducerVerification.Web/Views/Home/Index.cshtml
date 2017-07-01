@@ -1,0 +1,68 @@
+﻿@model ProducerVerification.Web.Models.ProducerUserInfo
+
+@{
+    ViewBag.Title = "Producer User Information";
+}
+
+<div class="row">
+    @*<div class="spacer-15px"></div>*@
+    <img src="https://stylehub.ncjua-nciua.org/Content/Images/logo_NoAtoms_ProducerVerification.png" />
+    <div class="greyLine"></div>
+    <div class="spacer-40px"></div>
+</div>
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-success">
+        <code>@TempData["error"]</code>
+    </div>
+}
+
+@using (Html.BeginForm("Home", "Home", FormMethod.Get, new { @class = "sky-form" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="labelFNOL">
+                            @Html.LabelFor(model => model.ProducerCode, htmlAttributes: new { @class = "categoryLabel label" })
+                        </div>
+                        <div class="inputFNOL">
+                            <label class="input">
+                                @Html.TextBoxFor(model => model.ProducerCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ProducerCode, "", new { @class = "text-danger" })
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="labelFNOL">
+                            @Html.LabelFor(model => model.AuthorizationCode, htmlAttributes: new { @class = "categoryLabel label" })
+                        </div>
+                        <div class="inputFNOL">
+                            <label class="input">
+                                @Html.TextBoxFor(model => model.AuthorizationCode, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AuthorizationCode, "", new { @class = "text-danger" })
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-10">
+                            <input type="submit" class="btn btn-blue2C7" value="Submit" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </fieldset>
+
+}
+
+<div class="spacer-20px"></div>
+
+

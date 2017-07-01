@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge; IE=11; IE=10; IE=9; IE=8; IE=7;" />
+
+    @*Favicon*@
+    <link rel="shortcut icon" href="https://stylehub.ncjua-nciua.org/Content/Images/favicon_v2.ico" type="image/x-icon" />
+
+    @*CSS Implementing Plugins*@
+    @Styles.Render("~/assets/plugins/font-awesome/css/font-awesome.min.css")
+    @Styles.Render("~/assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css")
+    @Styles.Render("~/assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css")
+
+    @*CSS Global - Bootstrap*@
+    @Styles.Render("~/Bootstrap/css/bootstrap.css")
+
+    @*CSS Customization*@
+    @Styles.Render("~/Content/Styles/MasterStyle.css")
+    @Styles.Render("~/Content/Styles/FNOLStyles.css")
+    <link href="https://stylehub.ncjua-nciua.org/Assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css" rel="stylesheet" />
+    <link href="https://stylehub.ncjua-nciua.org/Assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css" rel="stylesheet" />
+    <link href="https://stylehub.ncjua-nciua.org/Content/Styles/buttonStyles.css" rel="stylesheet" />
+
+    @*JS jQuery API - necessary for Bootstrap's JavaScript plugins*@
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    @*JS Bootstrap*@
+    @Scripts.Render("~/Bootstrap/js/bootstrap.min.js")
+
+
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body id="bootstrapOverride">
+    <nav class="navbar navbar-default navbar-fixed-top" id="navBar_dropShaddow">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
